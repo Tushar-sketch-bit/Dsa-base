@@ -1,4 +1,3 @@
-
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.HashMap;
@@ -253,11 +252,14 @@ public class Zoo {
         ZooManager chowkidar=new ZooManager();
         Scanner sc=new Scanner(System.in);
         System.out.println("what you want to do ?");
-        System.out.println("1.ADD an animal");
-        System.out.println("2.Remove animal ");
-        System.out.println("3.Get the knowledge of zoo");
-        
-        System.out.println("Enter the animal type that you want to -> (BIRD,MAMMAL,REPTILES): ");
+        System.out.println("1.ADD an animal : press '1' ");
+        System.out.println("2.Remove animal : press '2' ");
+        System.out.println("3.Get the knowledge of zoo : press '3' ");
+        int switcher=sc.nextInt();
+
+        switch (switcher) {
+            case 1:
+                System.out.println("Enter the animal type that you want to -> (BIRD,MAMMAL,REPTILES): ");
         String typeInput=sc.nextLine().toUpperCase();
         AnimalType type= AnimalType.valueOf(typeInput);
 
@@ -317,8 +319,16 @@ public class Zoo {
         else{
             System.out.println("type you entered does not match");
         }
+      break;
+            case 3:
+             chowkidar.describeZoo();
+             break;
+            default:
+              break;
+        }
+        
         sc.close();
-        chowkidar.describeZoo();
+        
 
 
 
